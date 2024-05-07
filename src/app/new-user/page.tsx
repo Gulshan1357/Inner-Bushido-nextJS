@@ -1,13 +1,12 @@
+import { prisma } from '@/app/utils/db'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
-import { prisma } from '../utils/db'
 
 const createNewUser = async () => {
     const user = await currentUser()
     console.log(user)
 
     if (user == null) {
-        console.log('User is null')
         return
     }
 
@@ -26,7 +25,7 @@ const createNewUser = async () => {
         })
     }
 
-    redirect('/dashboard')
+    redirect('/analytics')
 }
 
 const NewUser = async () => {
