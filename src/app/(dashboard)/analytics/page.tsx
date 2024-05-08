@@ -1,6 +1,7 @@
 import { getUserByClerkId } from '@/app/utils/auth'
 import { prisma } from '@/app/utils/db'
 import MatchCard from '@/components/MatchCard'
+import Techiniques from '@/components/Techniques'
 
 const getMatches = async () => {
     const user = await getUserByClerkId()
@@ -22,11 +23,14 @@ const AnalyticsPage = async () => {
     return (
         <div className="p-10 bg-zinc-400/10">
             <h2 className="text-3xl mb-8">Recent matches</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 mb-14">
                 {matches.map((match) => (
                     <MatchCard key={match.id} match={match} />
                 ))}
             </div>
+
+            <h2 className="text-3xl mb-8">Techniques</h2>
+            <Techiniques />
         </div>
     )
 }
