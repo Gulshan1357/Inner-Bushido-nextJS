@@ -5,7 +5,7 @@ const passOrFail = (value: boolean) => {
 const BlockProficiency = (props: any) => {
     console.log(props.firstTechnique)
     return (
-        <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow">
+        <div className="overflow-hidden">
             <div className="px-4 py-5">Blocking Techiniques</div>
 
             <div className="px-4 py-5">

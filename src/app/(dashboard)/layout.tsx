@@ -1,18 +1,17 @@
-import { UserButton } from '@clerk/nextjs'
+import Navbar from '@/components/NavBar'
+import Sidebar from '@/components/SideBar'
 
 const DashboardLayout = ({ children }) => {
     return (
-        <div className="h-screen w-screen relative">
-            <aside className="absolute w-[200px] top-0 left-0 h-full border-r border-black/10">
-                Mood
-            </aside>
-            <div className="ml-[200px]">
-                <header className="h-[60px] border-b border-black/10">
-                    <div className="h-full w-full px-6 flex items-center justify-end">
-                        <UserButton />
+        <div>
+            <div className="flex">
+                <Sidebar />
+                <main className="flex-grow ml-64 relative">
+                    <Navbar />
+                    <div>
+                        <div>{children}</div>
                     </div>
-                </header>
-                <div>{children}</div>
+                </main>
             </div>
         </div>
     )

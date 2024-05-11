@@ -21,13 +21,15 @@ const AnalyticsPage = async () => {
     const matches = await getMatches()
 
     return (
-        <div className="p-10 bg-zinc-400/10">
-            <h2 className="text-3xl mb-8">Recent matches</h2>
-            <div className="grid grid-cols-3 gap-4 mb-14">
-                {matches.map((match) => (
-                    <MatchCard key={match.id} match={match} />
-                ))}
-            </div>
+        <div>
+            <section>
+                <h2 className="text-3xl mb-8">Recent Matches</h2>
+                <div className="flex m-4 gap-2">
+                    {matches.map((match) => (
+                        <MatchCard key={match.id} match={match} />
+                    ))}
+                </div>
+            </section>
 
             <h2 className="text-3xl mb-8">Techniques</h2>
             <Techiniques />
