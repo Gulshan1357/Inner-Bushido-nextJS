@@ -11,39 +11,28 @@ import {
 const CutProficiencyChart = () => {
     const data = [
         {
-            year: '2016',
-            Iphone: 4000,
-            Samsung: 2400,
+            Date: 'May 1st',
+            Proficiency: 5,
         },
         {
-            year: '2017',
-            Iphone: 3000,
-            Samsung: 1398,
+            Date: 'May 2nd',
+            Proficiency: 16,
         },
         {
-            year: '2018',
-            Iphone: 2000,
-            Samsung: 9800,
+            Date: 'May 3rd',
+            Proficiency: 46,
         },
         {
-            year: '2019',
-            Iphone: 2780,
-            Samsung: 3908,
+            Date: 'May 4th',
+            Proficiency: 67,
         },
         {
-            year: '2020',
-            Iphone: 1890,
-            Samsung: 4800,
+            Date: 'May 5th',
+            Proficiency: 83,
         },
         {
-            year: '2021',
-            Iphone: 2390,
-            Samsung: 3800,
-        },
-        {
-            year: '2022',
-            Iphone: 3490,
-            Samsung: 4300,
+            Date: 'May 6st',
+            Proficiency: 67,
         },
     ]
 
@@ -52,7 +41,7 @@ const CutProficiencyChart = () => {
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                     width={730}
-                    height={250}
+                    height={150}
                     data={data}
                     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
                 >
@@ -99,17 +88,10 @@ const CutProficiencyChart = () => {
                     <Tooltip />
                     <Area
                         type="monotone"
-                        dataKey="Iphone"
+                        dataKey="Proficiency"
                         stroke="#8884d8"
                         fillOpacity={1}
                         fill="url(#colorUv)"
-                    />
-                    <Area
-                        type="monotone"
-                        dataKey="Samsung"
-                        stroke="#82ca9d"
-                        fillOpacity={1}
-                        fill="url(#colorPv)"
                     />
                 </AreaChart>
             </ResponsiveContainer>

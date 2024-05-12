@@ -22,8 +22,8 @@ const AnalyticsPage = async () => {
 
     return (
         <div>
-            <section>
-                <h2 className="text-3xl mb-8">Recent Matches</h2>
+            <section className="mt-5">
+                <h2 className="text-3xl mb-8 ml-3">Recent Matches</h2>
                 <div className="flex m-4 gap-2">
                     {matches.map((match) => (
                         <MatchCard key={match.id} match={match} />
@@ -31,8 +31,11 @@ const AnalyticsPage = async () => {
                 </div>
             </section>
 
-            <h2 className="text-3xl mb-8">Techniques</h2>
-            <Techiniques />
+            <h2 className="text-3xl mb-8 ml-3">Techniques</h2>
+
+            <section className='className="mt-5"'>
+                <Techiniques />
+            </section>
         </div>
     )
 }

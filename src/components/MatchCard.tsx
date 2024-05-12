@@ -1,14 +1,25 @@
-'use client'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card'
 
 const MatchCard = ({ match }) => {
     const date = new Date(match.createdAt).toDateString()
     return (
-        <div className="flex-1 px-2 justify-center w-16 bg-gray-700 shadow rounded h-300px">
-            <div className="">
-                <p className="text-gray-900 font-bold">Highlights</p>
-                <p className="py-4 font-bold">Date: {date}</p>
-                <p className="text-green-300">Score: {match.score}</p>
-            </div>
+        <div className="flex-1 px-2 justify-center w-16  h-300px">
+            <Card>
+                <CardHeader>
+                    <CardTitle>Highlights</CardTitle>
+                    <CardDescription>Date: May 1st, 2024</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <p>Score: 99/100</p>
+                </CardContent>
+            </Card>
         </div>
     )
 }

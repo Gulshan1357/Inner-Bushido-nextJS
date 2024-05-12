@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  clerkId String @unique
+  email   String @unique
+
+  matches   MatchHistroy[]
+  techiques TechniqueProficiency?
+}
+
+model MatchHistroy {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  score Int @default(0)
+
+  @@index([userId])
+}
+
+model TechniqueProficiency {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  firstCutting   Boolean @default(false)
+  secondCutting  Boolean @default(false)
+  thirdCutting   Boolean @default(false)
+  fourthCutting  Boolean @default(false)
+  fifthCutting   Boolean @default(false)
+  sixthCutting   Boolean @default(false)
+  seventhCutting Boolean @default(false)
+
+  firstBlockTechnique  Boolean @default(false)
+  secondBlockTechnique Boolean @default(false)
+  thirdBlockTechnique  Boolean @default(false)
+
+  firstSwordStance   Boolean @default(false)
+  secondSwordStance  Boolean @default(false)
+  thirdSwordStance   Boolean @default(false)
+  fourthSwordStance  Boolean @default(false)
+  fifthSwordStance   Boolean @default(false)
+  sixthSwordStance   Boolean @default(false)
+  seventhSwordStance Boolean @default(false)
+  eigthSwordStance   Boolean @default(false)
+
+  @@unique([userId])
+}

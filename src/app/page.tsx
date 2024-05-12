@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { auth } from '@clerk/nextjs/server'
 import Link from 'next/link'
 
@@ -9,19 +10,19 @@ export default async function Home() {
     console.log(`User Id at home page: ${userId}`)
 
     return (
-        <div className="dark bg-[#020817]">
+        <div className="bg-zinc-950 dark:bg-white">
             <div className="w-screen h-screen flex justify-center items-center text-white">
                 <div className="w-full max-w-[600px] mx-auto ">
-                    <h1 className="text-6xl mb-4">Inner-Bushido</h1>
-                    <p className="text-2xl text-white/60 mb-4">
-                        This is the best Samurai Simulator VR app to learn
-                        Bushido
-                    </p>
+                    <h2 className="text-6xl mb-4">Inner-Bushido</h2>
+
+                    <blockquote className="mt-6 mb-4 border-l-2 pl-6 italic">
+                        A Virtual Reality Simulator
+                    </blockquote>
                     <div>
                         <Link href={href}>
-                            <button className="bg-blue-600 px-4 py-2 rounded-lg text-xl">
+                            <Button variant="default" size="lg">
                                 get started
-                            </button>
+                            </Button>
                         </Link>
                     </div>
                 </div>
